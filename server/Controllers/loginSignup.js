@@ -139,7 +139,7 @@ exports.login = async (req, res) => {
         expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
         httpOnly: true,
       };
-      res.cookie("token", token, options).status(200).json({
+      return res.cookie("token", token, options).status(200).json({
         success: true,
         token,
         user,
@@ -184,8 +184,8 @@ exports.sendotp = async (req, res) => {
     console.log("OTP", otp);
     console.log("Result", result);
     while (result) {
-      otp = otpGenerator.generate(6, {
-        upperCaseAlphabets: false,
+      otp = otpGenerator.generate(4, {
+        upperCaseAlphabets: true,
       });
     }
     const otpPayload = { email, otp };
