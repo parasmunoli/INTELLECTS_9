@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { temp } from "./User/Login_auth";
 import Header from "./Components/Header";
 import { loginUser } from "./User/Login_auth";
+import Create_Job from "./Pages/Create_Job";
 
 function App() {
   const dispatch = useDispatch();
@@ -53,6 +54,7 @@ function App() {
               element={<Home username={username} handleLogout={handleLogout} />}
             />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/createjob" element={<Create_Job />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </>
         ) : (

@@ -111,6 +111,9 @@ html {
 h3 {
   font-size: 2rem;
 }
+p {
+  color: grey;
+}
 .home {
   height: 100vh;
   display: flex;
@@ -131,6 +134,7 @@ h3 {
 .form-group {
   display: grid;
   gap: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 .form-group input {
   border-radius: 10px;
@@ -387,6 +391,40 @@ h3 {
 .application-grid img {
   height: 5rem;
 }
+.Create_Job {
+  display: grid;
+  gap: 1rem;
+  width: 60vw;
+  margin: 50px auto 0;
+}
+
+.Create_job-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+.calendar-input {
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* Adjust width as needed */
+}
+
+.input-container {
+  position: relative;
+}
+
+.calendar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.Create_Job--btn {
+  width: 80%;
+  margin: 0 auto;
+}
+/* Add more styling as needed */
 
 @media only screen and (max-width: 56.25em) {
   .searchBar {
@@ -400,6 +438,9 @@ h3 {
   }
   .form {
     width: 70vw;
+  }
+  .Create_job-grid {
+    grid-template-columns: 1fr;
   }
 }
 
