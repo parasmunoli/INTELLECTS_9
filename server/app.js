@@ -3,7 +3,7 @@ const app = express();
 const database = require("./Config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const { cloudinaryConnect } = require("./config/cloudinary");
+const { cloudinaryConnect } = require("./Config/cloudinary");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 app.use(express.json());
