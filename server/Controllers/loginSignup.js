@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const User = require('../Model/User')
+const User = require("../Model/User");
 const OTP = require("../Model/OTP");
 const otpGenerator = require("otp-generator");
 const jwt = require("jsonwebtoken");
@@ -111,9 +111,7 @@ exports.login = async (req, res) => {
       });
     }
     // Finding and auth user in DB
-    const user = await User.findOne({ email }).populate(
-      "userDetails startupDetails"
-    );
+    const user = await User.findOne({ email });
 
     // not registered
     if (!user) {
@@ -165,7 +163,7 @@ exports.login = async (req, res) => {
 
 exports.sendotp = async (req, res) => {
   try {
-    const {email} = req.body
+    const { email } = req.body;
 
     const checkUserPresent = await User.findOne({ email });
 
@@ -201,5 +199,25 @@ exports.sendotp = async (req, res) => {
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({ success: false, error: error.message });
+  }
+};
+
+exports.updateProfile = async (req, res) => {
+  try {
+    const { experiences, education, gender, dateOfBirth, about, userId } =
+      req.body;
+
+    const updatedData = {experiences: experiences, education: education, gender: gender, dateOfBirth: dateOfBirth, about: about}
+
+    const data = await User.findByIdAndUpdate({_id: userId, additionalDetails: updatedData}, {new: true})
+
+    res.status(200).json({
+      success: true,
+      message: "Updation Successful",
+      data: data
+    })
+  } catch (e) {
+    console.log(e.message);
+    return res.status(500).json({ success: false, error: e.message });
   }
 };
