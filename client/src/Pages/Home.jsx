@@ -8,7 +8,7 @@ const Home = ({ username, handleLogout }) => {
   };
   return (
     <>
-      <Header></Header>
+      {/* <Header></Header> */}
       <div className="section">
         <div className="slidebar">
           <div className="slidebar-image">

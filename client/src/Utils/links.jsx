@@ -8,6 +8,10 @@ const Links = [
     link: "/signup",
   },
   {
+    item: "Profile",
+    link: "/profile",
+  },
+  {
     item: "Login",
     link: "/login",
   },
@@ -47,4 +51,25 @@ const card_second = [
   },
 ];
 
-export { Links, card_first, card_second };
+const resume = [
+  {
+    img: "https://www.bing.com/th/id/OIP.vbwkWI35ZmPKFR7dPUI0rAHaDa?w=337&h=160&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    heading: "Software Engineer",
+    desc: "Software Engineer ar Facebook",
+    response: "Submitted",
+  },
+  {
+    img: "https://www.bing.com/th/id/OIP.vbwkWI35ZmPKFR7dPUI0rAHaDa?w=337&h=160&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    heading: "Software Engineer",
+    desc: "Software Engineer ar Facebook",
+    response: "Not Submitted",
+  },
+  {
+    img: "https://www.bing.com/th/id/OIP.vbwkWI35ZmPKFR7dPUI0rAHaDa?w=337&h=160&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    heading: "Software Engineer",
+    desc: "Software Engineer ar Facebook",
+    response: "Submitted",
+  },
+];
+
+export { Links, card_first, card_second, resume };
