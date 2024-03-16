@@ -1,7 +1,12 @@
 const mongoose = require("mongoose");
 
 const JobPostSchema = new mongoose.Schema({
-  company_id: {
+  createdBy: {
+    type: String,
+    ref: 'User',
+    required: true
+  },
+  company_name: {
     type: String,
     required: true,
     trim: true,
@@ -45,6 +50,10 @@ const JobPostSchema = new mongoose.Schema({
       },
     },
   ],
+  applicationDeadline: {
+    type: Date,
+    required: true
+  }
 });
 
 module.exports = mongoose.model("JobPosts", JobPostSchema);
