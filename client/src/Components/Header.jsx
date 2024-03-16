@@ -3,8 +3,11 @@ import { Links } from "../Utils/links";
 import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
+import { useDispatch } from "react-redux";
+import { logout } from "../User/Login_auth";
 const Header = () => {
   const [toggle, isToggle] = useState(false);
+  const dispatch = useDispatch();
   return (
     <div className="navlink">
       <div className="logo">
@@ -22,7 +25,7 @@ const Header = () => {
             {Links.map((data, index) => {
               return (
                 <li key={index} className="nav-items">
-                  <NavLink exact to={data.link} activeClassName="active">
+                  <NavLink exact to={data.link} activeclassname="active">
                     {data.item}
                   </NavLink>
                 </li>
@@ -36,12 +39,19 @@ const Header = () => {
           {Links.map((data, index) => {
             return (
               <li key={index} className="nav-items">
-                <NavLink exact to={data.link} activeClassName="active">
+                <NavLink exact to={data.link} activeclassname="active">
                   {data.item}
                 </NavLink>
               </li>
             );
           })}
+          <NavLink
+            to="/logout"
+            className="log-out"
+            onClick={() => dispatch(logout())}
+          >
+            Logout
+          </NavLink>
         </ul>
       </div>
     </div>

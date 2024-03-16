@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../User/Login_auth";
 
-const onSubmit = (e) => {
-  e.preventDefault();
-};
-
-const Login = ({ handleLogin }) => {
+const Login = ({ username, password, setUsername, setPassword }) => {
+  const dispatch = useDispatch();
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+  const handleLogin = () => {
+    console.log("TRIGGERED");
+    dispatch(loginUser());
+  };
   return (
     <div className="home">
       <form action="" className="form" onSubmit={onSubmit}>
         <h1>Log In</h1>
         <div className="form-group">
           <label htmlFor="username">Username: </label>
-          <input type="text" placeholder="student@standard.edu" />
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="student@standard.edu"
+          />
         </div>
         {/* <Input
           label="Username:"
@@ -21,7 +32,12 @@ const Login = ({ handleLogin }) => {
         ></Input> */}
         <div className="form-group">
           <label htmlFor="password">Password </label>
-          <input type="password" placeholder="password" />
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="password"
+          />
         </div>
         <button className="btn" onClick={handleLogin}>
           Login
