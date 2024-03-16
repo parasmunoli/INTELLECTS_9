@@ -108,7 +108,12 @@ html {
     font-size: 30%;
   } */
 }
-
+h3 {
+  font-size: 2rem;
+}
+p {
+  color: grey;
+}
 .home {
   height: 100vh;
   display: flex;
@@ -120,7 +125,7 @@ html {
 
 .form {
   width: 30vw;
-  max-width: 40vw;
+  /* max-width: 40vw; */
   display: grid;
   gap: 1rem;
   text-align: start;
@@ -129,6 +134,7 @@ html {
 .form-group {
   display: grid;
   gap: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 .form-group input {
   border-radius: 10px;
@@ -192,7 +198,8 @@ html {
   list-style: none;
   margin: 0;
 }
-.nav-items a {
+.nav-items a,
+.log-out {
   margin-left: 2rem;
   color: black;
   text-transform: uppercase;
@@ -313,6 +320,111 @@ html {
 .header--small-info {
   display: none;
 }
+.profile {
+  width: 70vw;
+  margin: 20px auto 0;
+}
+.profile-first {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-info {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+}
+.user-info img {
+  border-radius: 20px;
+  height: 100%;
+}
+
+.profile-edit-first {
+  background-color: grey;
+  margin-right: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+  border: 0;
+}
+.profile-edit-second {
+  background-color: #0080ff;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.email {
+  display: flex;
+  font-size: 3em;
+}
+.location {
+  display: flex;
+  /* margin-top: 1rem; */
+  font-size: 2.5em;
+}
+.profile-first {
+  margin-bottom: 2rem;
+}
+
+.personal-info-1,
+.personal-info-2 {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 3.5rem auto;
+  align-items: center;
+}
+
+.application {
+  margin-top: 2rem;
+}
+
+.application-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+.application-grid img {
+  height: 5rem;
+}
+.Create_Job {
+  display: grid;
+  gap: 1rem;
+  width: 60vw;
+  margin: 50px auto 0;
+}
+
+.Create_job-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+.calendar-input {
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* Adjust width as needed */
+}
+
+.input-container {
+  position: relative;
+}
+
+.calendar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.Create_Job--btn {
+  width: 80%;
+  margin: 0 auto;
+}
+/* Add more styling as needed */
 
 @media only screen and (max-width: 56.25em) {
   .searchBar {
@@ -323,6 +435,12 @@ html {
   }
   .open {
     position: fixed;
+  }
+  .form {
+    width: 70vw;
+  }
+  .Create_job-grid {
+    grid-template-columns: 1fr;
   }
 }
 
