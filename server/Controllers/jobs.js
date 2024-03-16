@@ -21,7 +21,7 @@ exports.createJobPost = async (req, res) => {
             experienceRequired: experienceRequired,
             applicationDeadline: applicationDeadline,
             createdBy: createdBy
-        },{timestamps: true})
+        })
 
         return res.status(200).json({
             success: true,

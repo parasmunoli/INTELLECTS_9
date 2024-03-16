@@ -44,9 +44,6 @@ const PORT = process.env.PORT || 8000;
 // CORS preflight handling for all routes
 app.options("*", cors()); // Respond to preflight requests with CORS headers
 
-// Define routes
-const userRoutes = require("./Routes/user");
-app.use("/api/v1/auth", userRoutes);
 
 // Route to check service status
 app.get("/", (req, res) => {
