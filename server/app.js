@@ -23,6 +23,7 @@ database.connect();
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
+app.options("*", cors()); // Respond to preflight requests with CORS headers
 app.use(
   cors({
     origin: "*", // Allow requests from any origin
@@ -30,7 +31,6 @@ app.use(
     methods: ['GET', 'POST'],
   })
 );
-app.options("*", cors()); // Respond to preflight requests with CORS headers
 app.use(
   fileUpload({
     useTempFiles: true,
