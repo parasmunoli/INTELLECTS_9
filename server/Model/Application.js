@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 const ApplicationSchema = new mongoose.Schema({
+  jobID: {
+    type: mongoose.Types.ObjectId,
+    required: true,
+    ref: 'JobPost'
+  },
   fname: {
     type: String,
     trim: true,
