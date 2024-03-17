@@ -1,0 +1,5 @@
+json
+pymongo
+TfidfVectorizer
+cosine_similarity
+Flask
