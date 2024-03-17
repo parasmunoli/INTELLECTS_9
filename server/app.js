@@ -30,6 +30,7 @@ app.use(
     methods: ['GET', 'POST'],
   })
 );
+app.options("*", cors()); // Respond to preflight requests with CORS headers
 app.use(
   fileUpload({
     useTempFiles: true,
