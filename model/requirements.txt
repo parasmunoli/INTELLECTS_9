@@ -1,7 +1,4 @@
-Flask
-request
-jsonify
-pymongo
-TfidfVectorizer
-cosine_similarity
-Flask
+Flask==2.1.5
+requests==2.26.0
+pymongo==4.0.1
+scikit-learn==0.24.2
